@@ -1,0 +1,6 @@
+<h1>My Posts</h1>
+
+<% @blog_posts.each_with_index do |post, i| %>
+<h2><%= i + 1 %> <%= post.title %></div>
+<p><%= post.body %></div>
+<%end%>
