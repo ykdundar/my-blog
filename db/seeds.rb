@@ -10,3 +10,10 @@ user.update!(
    password: "password",
    password: "password"
    )
+puts "Creating restaurants..."
+
+BlogPost.create([
+{title: "Hello World", body:"This is my first blog post"},
+{title: "Hello Cosmos", body:"This is my second blog post"}
+])
+puts "Finished!"
