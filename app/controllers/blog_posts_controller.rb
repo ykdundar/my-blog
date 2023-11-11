@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_blog_post, only: [:show, :edit, :destroy]
+  before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 
   def index
    @blog_posts = user_signed_in? ? BlogPost.sorted : BlogPost.published.sorted
@@ -29,7 +29,7 @@ class BlogPostsController < ApplicationController
     if @blog_post.update(blog_post_params)
       redirect_to @blog_post
     else
-      render :edit , status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
