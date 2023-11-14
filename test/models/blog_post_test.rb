@@ -1,39 +1,39 @@
-require "test_helper"
+require 'test_helper'
 
 class BlogPostTest < ActiveSupport::TestCase
-   test "draft? returns true for draft blog post" do
+  test 'draft? returns true for draft blog post' do
     assert blog_posts(:draft).draft?
-   end
+  end
 
-   test "draft? returns false for published blog post" do
+  test 'draft? returns false for published blog post' do
     refute blog_posts(:published).draft?
-   end
+  end
 
-   test "draft? returns false for scheduled blog post" do
+  test 'draft? returns false for scheduled blog post' do
     refute blog_posts(:scheduled).draft?
-   end
+  end
 
-   test "published? returns true for published blog post" do
+  test 'published? returns true for published blog post' do
     assert blog_posts(:published).published?
-   end
+  end
 
-   test "published? returns true for draft blog post" do
+  test 'published? returns true for draft blog post' do
     refute blog_posts(:draft).published?
-   end
+  end
 
-   test "published? returns true for scheduled blog post" do
+  test 'published? returns true for scheduled blog post' do
     refute blog_posts(:scheduled).published?
-   end
+  end
 
-   test "scheduled? returns true for scheduled blog post" do
+  test 'scheduled? returns true for scheduled blog post' do
     assert blog_posts(:scheduled).scheduled?
-   end
+  end
 
-   test "scheduled? returns true for draft blog post" do
+  test 'scheduled? returns true for draft blog post' do
     refute blog_posts(:draft).scheduled?
-   end
+  end
 
-   test "scheduled? returns true for published blog post" do
+  test 'scheduled? returns true for published blog post' do
     refute blog_posts(:published).scheduled?
-   end
+  end
 end

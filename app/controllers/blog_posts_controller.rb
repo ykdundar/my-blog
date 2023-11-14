@@ -1,13 +1,12 @@
 class BlogPostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_blog_post, only: %i[show edit update destroy]
 
   def index
-   @blog_posts = user_signed_in? ? BlogPost.sorted : BlogPost.published.sorted
+    @blog_posts = user_signed_in? ? BlogPost.sorted : BlogPost.published.sorted
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @blog_post = BlogPost.new
@@ -22,8 +21,7 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @blog_post.update(blog_post_params)
@@ -39,6 +37,7 @@ class BlogPostsController < ApplicationController
   end
 
   private
+
   def blog_post_params
     params.require(:blog_post).permit(:title, :content, :published_at)
   end
