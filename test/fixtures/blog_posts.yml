@@ -2,15 +2,15 @@
 
 draft:
   title: Hello world!
-  body: My draft text
+  content: My draft text
   published_at: null
 
 published:
   title: Hello mars!
-  body: My published text
+  content: My published text
   published_at: <%= 1.year.ago %>
 
 scheduled:
   title: Hello cosmos!
-  body: My scheduled
+  content: My scheduled
   published_at: <%= Time.current %>
