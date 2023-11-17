@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -75,3 +77,5 @@ end
 gem 'devise', '~> 4.9'
 
 gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'aws-sdk-s3', require: false

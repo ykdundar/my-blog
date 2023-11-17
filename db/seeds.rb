@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 BlogPost.destroy_all
 user = User.where(email: 'yk@gmail.com').first_or_initialize
 user.update!(
