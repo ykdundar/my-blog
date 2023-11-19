@@ -16,17 +16,22 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <div>
-      <% if user_signed_in? %>
-      <%= link_to "New blog post", new_blog_post_path%>
-      <%#= link_to "Profile", edit_user_registration_path %>
-      <%= button_to "Log out", destroy_user_session_path, method: :delete%>
-      <%# else %>
-      <%#= link_to "Sign up", new_user_registration_path  %>
-      <%#= link_to "Sign in", new_user_session_path %>
-      <% end %>
-    </div>
+    <div class="bg-white border-gray-200">
+      <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+        <h1 class = "text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 font-extrabold text-3xl">Yesim Dundar</h1>
 
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+          <% if user_signed_in? %>
+          <%= link_to "New blog post", new_blog_post_pathclass:"text-sm text-blue-600 hover:underline"%>
+          <%#= link_to "Profile", edit_user_registration_path %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-sm text-blue-600 hover:underline"%>
+          <%# else %>
+          <%#= link_to "Sign up", new_user_registration_path  %>
+          <%#= link_to "Sign in", new_user_session_path %>
+          <% end %>
+        </div>
+      </div>
+   </div>
     <%= yield %>
   </body>
 </html>
