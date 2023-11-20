@@ -39,7 +39,8 @@
     </div>
     <div class="grid justify-items-center px-4 py-3 sm:px-6">
       <%# Render a view helper in your views (skipping nav links for empty pages) %>
-      <%if @pagy.count > 20%>
+      <%=console%>
+      <%if @pagy.count > @pagy.items%>
       <%== pagy_nav(@pagy) if @pagy.pages > 1%>
       <%end%>
     </div>
