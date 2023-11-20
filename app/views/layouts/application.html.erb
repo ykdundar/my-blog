@@ -22,7 +22,7 @@
 
         <div class="flex items-center space-x-6 rtl:space-x-reverse">
           <% if user_signed_in? %>
-          <%= link_to "New blog post", new_blog_post_pathclass:"text-sm text-blue-600 hover:underline"%>
+          <%= link_to "New blog post", new_blog_post_path class:"text-sm text-blue-600 hover:underline"%>
           <%#= link_to "Profile", edit_user_registration_path %>
           <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-sm text-blue-600 hover:underline"%>
           <%# else %>
