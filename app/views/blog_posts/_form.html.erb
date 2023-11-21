@@ -1,20 +1,23 @@
     <%=form_with model: blog_post do |form| %>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-    <div>
-      <%= image_tag blog_post.cover_image if blog_post.cover_image.attached? %>
-      <%= form.label :cover_image %>
-      <%= form.file_field :cover_image  %>
-    </div>
-    <div>
-      <%= form.label :content %>
-      <%= form.rich_text_area :content, size: "60x10" %>
-    </div>
-    <div>
-      <%= form.label :published_at %>
-      <%= form.datetime_select :published_at, include_blank: true %>
-    </div>
-    <%= form.submit %>
+      <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+      <div>
+        <% if blog_post.cover_image.attached? %>
+          <%= image_tag blog_post.cover_image%>
+          <%= link_to "Remove cover image", blog_post_cover_image_path(blog_post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <%end%>
+          <%= form.label :cover_image %>
+          <%= form.file_field :cover_image %>
+      </div>
+      <div>
+        <%= form.label :content %>
+        <%= form.rich_text_area :content, size: "60x10" %>
+      </div>
+      <div>
+        <%= form.label :published_at %>
+        <%= form.datetime_select :published_at, include_blank: true %>
+      </div>
+      <%= form.submit %>
     <%end%>
