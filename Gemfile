@@ -5,8 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~>3.2'
 
-gem 'rubocop', require: false
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.8'
 
@@ -80,4 +78,4 @@ gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'aws-sdk-s3', require: false
 
-gem "pagy", "~> 6.2"
+gem 'pagy', '~> 6.2'
