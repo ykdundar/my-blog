@@ -14,6 +14,7 @@
             <% end %>
           </div>
           <div class="group relative">
+            <%= image_tag post.cover_image, sizes: "100vw" if post.cover_image.attached? %>
             <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
               <a href= <%= "/blog_posts/#{post.id}" %> >
                 <span class="absolute inset-0"></span>

@@ -1,19 +1,20 @@
-<%=form_with model: blog_post do |form| %>
-<div>
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-
-</div>
-
-<div>
-  <%= form.label :content %>
-  <%= form.rich_text_area :content, size: "60x10" %>
-</div>
-
-<div>
-  <%= form.label :published_at %>
-  <%= form.datetime_select :published_at, include_blank: true %>
-</div>
-
-<%= form.submit %>
-<%end%>
+    <%=form_with model: blog_post do |form| %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= image_tag blog_post.cover_image if blog_post.cover_image.attached? %>
+      <%= form.label :cover_image %>
+      <%= form.file_field :cover_image  %>
+    </div>
+    <div>
+      <%= form.label :content %>
+      <%= form.rich_text_area :content, size: "60x10" %>
+    </div>
+    <div>
+      <%= form.label :published_at %>
+      <%= form.datetime_select :published_at, include_blank: true %>
+    </div>
+    <%= form.submit %>
+    <%end%>
