@@ -1,5 +1,5 @@
-class BlogPosts::CoverImages < ApplicationController
-  before_action :autenticate_user!
+class BlogPosts::CoverImagesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_blog_post
 
   def destroy
